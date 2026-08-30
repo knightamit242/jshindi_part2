@@ -1,0 +1,45 @@
+//0//CALLBACK FUNCTION KYA HOTA HAI?? IMPORTANT
+
+// Callback Function = Jo function tum kisi doosre function/API ko de dete ho, aur baad mein wahi usse execute (call back) karta hai.
+
+// Isi liye addEventListener(), forEach(), setTimeout(), map(), filter() etc. mein jo function pass karte ho, unhe callback functions kaha jata hai.
+
+// Case 1: Normal Function
+// function hello() {
+//     console.log("Hello")
+// }
+// hello()
+
+// Yaha
+// Function tumne banaya.
+// Function tumne hi call kiya.
+// Tum  ─────► hello()
+// Isliye isko bas normal function bolte hain.
+
+// Case 2: Callback Function
+// button.addEventListener('click', function () {
+//     console.log("Clicked")
+// })
+
+// Yaha
+// Tum function call nahi kar rahe.
+// Tum sirf browser ko de rahe ho.
+// Jaise bol rahe ho:
+// "Browser ji, ye function rakh lo. Jab click ho tab ise chala dena."
+
+// Ab flow dekho:
+// Tum
+//  │
+//  │ function(){...}
+//  ▼
+// Browser ke paas function store ho gaya
+//  │
+//  │ User ne click kiya
+//  ▼
+// Browser function ko call karta hai
+// Yani function baad mein "call back" kiya gaya.
+// Isi wajah se naam hai:
+// Callback Function = Aisa function jo kisi aur ko diya jata hai, aur baad mein wahi usse call karta hai.
+
+
+
