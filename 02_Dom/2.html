@@ -1,0 +1,138 @@
+<!-- =========================================
+DOM MANIPULATION - CREATING ELEMENTS
+=========================================
+
+1. document.createElement()
+
+2. Adding Class and ID
+
+3. Styling Elements
+
+4. Adding Text
+   - innerText
+   - createTextNode()
+
+5. appendChild()
+
+6. Adding Element to Webpage -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Chai Aur Code</title>
+</head>
+
+
+<!-- AB HAM ELEMENT CREATE KRNA SIKHENGE  -->
+
+<body style="background-color: yellow;">
+    
+   
+<script>
+
+//1.1//
+// const one=document.createElement('div') //ISSE EK DIV ELEMENT CREATE HOGA... 
+
+//YE DOM MEMORY MEIN EK NAYA DIV ELEMENT CREATE KARTA HAI.
+//ABHI YEH WEBPAGE PAR VISIBLE NAHI HOGA KYONKI YEH DOCUMENT KE KISI PART (BODY, DIV, ETC.) MEIN APPEND NAHI HUA HAI.
+
+
+// TUM 'div' KE ALAVA 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'a' ETC BHI CREATE KR SKTE HO... AUR YE SAB ELEMENTS JS MEIN HI CREATE HOTE HAIN... HTML MEIN NHI HOTE...
+
+// console.log(one) 
+// OUTPUT: <div></div>  // YE EK EMPTY DIV DEGA... AUR YE JS MEIN HI HOGA... HTML MEIN NHI HOGA ABHI
+
+
+
+//1.2//
+const one= document.createElement('div') 
+
+one.className="main" // ISSE EK CLASS NAME ADD HOGA... <div class="main"></div>  
+
+one.id="mainId" // ISSE EK ID ADD HOGA... <div class="main" id="mainId"></div>
+
+// Alternative: AISE BHI EK OPTION HAI
+one.setAttribute("class","main")
+one.setAttribute("id","mainId")
+
+one.style.backgroundColor="red" // AB SAME YE BHI... UPAR JAISE
+one.style.color='blue'
+
+// one.innerText="div ke andar kuch likh diya"      
+// AISE KRO OR...    EK AUR METHOD HAI... TextNode BANA KE
+const addText= document.createTextNode('TEXTNODE BANA KE')// YE TEXTNODE BHI EK TEXT HAI...
+
+one.appendChild(addText) 
+//AB JO TEXT NODE BNAYE HO USKO DIV KE ANDAR ADD BHI KRNA PADEGA AISE
+
+//CONCEPT:
+//appendChild() SE PEHLE <div></div>
+
+// Kyoki one ek empty div hai.
+// Aur:
+// addText ek Text Node hai jisme "TEXTNODE BANA KE" store hai.
+
+
+// appendChild() kya karega?
+
+// one.appendChild(addText)
+// Matlab:
+// "addText ko one ke andar child bana do"
+// Ab memory mein:
+
+// <div>
+//     TEXTNODE BANA KE
+// </div>
+// ban jayega.
+
+
+// DIFFERENCE B/W innerText AND createTextNode()
+// Dono methods text add karte hain.
+// innerText:
+// Direct text add karta hai.
+// createTextNode():
+// Pehle text node banata hai, phir append karna padta hai.
+
+console.log(one) // PAGE PE ABHI YE SAB CHANGES NHI DIKHENGE... OBVIOUSLY... CONSOLE MEIN DIKHEGA ONLY...  PAGE PE TABHI DIKHEGA JAB APPEND KRKE PAGE MEIN ADD KROGE...
+//CONSOLE MEIN ELEMENT DIKHNA AUR WEBPAGE PAR VISIBLE HONA DONO ALAG CHEEZEIN HAIN.
+
+
+document.body.appendChild(one) // AB YE PAGE PE BHI DIKHEGA... PAGE KE BODY MEIN ADD HO GAYA HAI... AUR YE SAB CHANGES BHI DIKHEGA...
+
+</script>
+
+
+</body>
+</html>
+
+
+<!-- 1.3 appendChild() child ko parent ke andar last position par add karta hai. -->
+<!-- <div>
+   Hello
+</div>
+
+appendChild()
+↓
+<div>
+   Hello
+   TEXTNODE BANA KE
+</div> -->
+
+
+<!-- 1.4 appendChild() hamesha kisi Parent Element par lagta hai.
+Parent.appendChild(Child) -->
+
+<!-- EXAMPLES -->
+<!--  
+document.body.appendChild(one)
+
+parent.appendChild(one)
+
+container.appendChild(one)
+
+ul.appendChild(li) -->
+
+

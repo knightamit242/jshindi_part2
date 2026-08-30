@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Chai Aur Code</title>
+</head>
+
+
+<!-- AB HAM ISI HTML FILE MEIN HE JS KE CODE LIKHENGE... SCRIPT TAG MEIN
+ AUR ISKA OUTPUT JO BHI HOGA WO HAMARE IS PAGE KE CONSOLE MEIN DIKHEGA -->
+
+<body style="background-color: yellow;">
+    
+    <div class="parent">
+        <div class="day"> Monday  </div>
+        <div class="day"> Tuesday  </div>
+        <div class="day"> Wednesday</div>
+        <div class="day"> Thursday </div>
+    </div>
+
+<script>
+
+//1//
+
+//1.1//
+// const one=document.querySelector('.parent')
+// console.log(one)  
+// OUTPUT: <div class="parent">... </div>
+// UPAR WALA POORA DIV DE DEGA... 
+
+//1.2//
+// const one=document.querySelector('.parent')
+// console.log(one.children) 
+// OUTPUT:HTMLCollection(4) [div, div, div, div]
+// YE HTML COLLECTION DEGA... <<=IMPORTANT
+// .children SELECT KIYE GAYE PARENT ELEMENT KE DIRECT CHILD ELEMENTS RETURN KARTA HAI.
+
+//1.3//
+// const one=document.querySelector('.parent')
+// console.log(one.children[0].innerText)
+// OUTPUT: 'Monday'
+
+//1.4// APPLYING LOOP ON HTML COLLECTION
+// const one=document.querySelector('.parent')
+// const two= one.children
+// console.log(two)  
+// OUTPUT: HTMLCollection(4) [div, div, div, div]
+
+// for(let i=0;i<two.length;i++){
+//     console.log(two[i].innerText)
+// }
+
+// =>>YAHA HTMLCollection PE FOR LOOP LAGAYA HAI... AUR ISLIYE CHALA KYOKI....
+// HTMLCollection MEIN length PROPERTY HOTI HAI... AUR ISME
+// index ACCESS (two[0], two[1]) HOTA HAI
+//AUR FOR LOOP KO BAS ITNA HE CHAHIYE
+
+// JO NHI CHLATA (DIRECTLY) WO HAI...
+// two.forEach(...)   // YE NHI CHLATA...  
+
+//1.5//USING ANOTHER PROPERTY TO ACCESS SINGLE CHILDREN OF PARENT
+
+// const one=document.querySelector('.parent')                                              
+
+// console.log(one.firstElementChild)  //one PARENT KA PEHLAA CHILD ACCESS KR DEGA..
+// // OUTPUT: <div> Monday   </div>
+// console.log(one.lastElementChild)
+// OUTPUT: <div> Thursday </div>   // one PARENT KA LAST CHILD ACCESS KR DEGA..
+
+
+
+//1.6//  CHILD SE PARENT ACCESS...
+const dayOne=document.querySelector('.day')
+console.log(dayOne)  //PEHLA WALA CHILD ACCESS KRNE KE LIYE YE CHAL JAYEGA...
+// OUTPUT: <div class="day"> Monday   </div>
+
+
+//1.6.1
+console.log(dayOne.parentElement) // POORA PARENT ELEMENT ACCESS KR DEGA
+// OUTPUT: <div class="parent">... </div>
+
+console.log(dayOne.nextElementSibling)
+// OUTPUT :  <div class="day"> Tuesday  </div>
+
+
+//1.6.2=> IMPORTANT CONCEPT
+const one=document.querySelector('.parent')
+console.log(one.childNodes) // YE .children KI TARAH NHI HAI... YE NodeList DEGA... AUR ISME TEXT NODE BHI HOGA...
+// OUTPUT: NodeList(9) [text, div.day, text, div.day, text, div.day, text, div.day, text]
+
+//YAHA HAR EK CHILD KE BAAD Ek TEXT NODE BHI HOGA... AUR YE TEXT NODE SPACE KI WJA SE HOTA HAI. EXAMPLE: MONDAY AUR TUESDAY WAALE DIV ALAG-2 LINE MEIN LIKHE HAI.. TO EK LINE KE BAAD JO SPACE HOGA WHI SPACE TEXT NODE BAN JATA HAI... AUR ISKI WJA SE YE 9 NODES DE RAHA HAI... 4 DIVS + 5 TEXT NODES = 9     
+
+//YE TEXT NODE KO ACCESS KRNE KE LIYE HUM .children KI JAGAH .childNodes USE KRTE HAI... 
+
+// Formatting, newline aur spaces bhi text nodes ban sakte hain.
+
+//WHILE .children HTMLCollection DEGA AUR .childNodes NodeList DEGA... AUR YE DONO ALAG HAIN... 
+
+// // .childNodes sabhi nodes deta hai
+// (Element Nodes + Text Nodes + Comments etc.)
+
+// .children sirf element nodes deta hai.
+
+
+// Dono indexing support karte hain
+// Difference stored nodes ka hai, indexing ka nahi
+
+    </script>
+
+</body>
+</html>
+
+
+

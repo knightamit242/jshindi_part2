@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #0000008c; color: white;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    //AB HUM EK FUNCTION BANAKAR ELEMENTS ADD KRTE HAI... 
+
+    //METHOD:1
+    // function addElement(langName){   
+    //     const one= document.createElement('li') 
+    //     one.innerHTML= `${langName}`   // TEXT SET KIYA 
+
+    //one.textContent = `${langName}`  // YE ZYADA SAFE RAHEGA innerHTML SE AUR YHI 
+    //  MOSTLY USE BHI HOTA HAI  //#####IMPORTANT
+
+
+    //     document.querySelector('.language').appendChild(one) 
+    // }
+
+    // addElement("python")
+    // addElement('c++')
+
+
+    //METHOD:2
+    function addElement(langName){
+        const one= document.createElement('li') // YHA TAK TO SAME RAHEGA
+        two=document.createTextNode(`${langName}`) // EK TEXT NODE BANAO
+        one.appendChild(two) // US TEXT NODE KO one MEIN APPEND KR DO
+        // AB li MEIN TEXT NODE AA GYA
+
+        document.querySelector('.language').appendChild(one)
+    }
+
+    addElement("ruby")
+    addElement('typescript')
+</script>
+</html>
+
+<!-- THODA CONCEPT SAMJHATE HAI........ DIFFERENCE BETWEEN METHOD.1 AND METHOD.2-->
+ 
+<!-- Method 1
+
+Ye line:
+li.innerHTML = `${langName}`
+browser ko bolti hai:
+"Is string ko HTML ki tarah parse karo, phir usse DOM banao."
+Matlab browser ko pehle string ko HTML samajhna padta hai.
+
+Method 2 (Optimized)
+
+Ye line:
+document.createTextNode(langName)
+seedha ek Text Node bana deti hai.
+Phir:
+li.appendChild(...)
+usse <li> ke andar add kar deta hai.
+Yahan browser ko HTML parse nahi karna padta.
+
+Difference
+Method 1 (innerHTML)	                                     Method 2 (createTextNode)
+String ko HTML ki tarah parse karta hai.	           Seedha Text Node banata hai.
+Thoda slow hota hai.	                               Thoda fast (optimized) hota hai.
+Agar HTML tags ho to unhe bhi render kar dega.	       Sirf text add karega. HTML ko text hi 
+                                                            maanega.
+Example
+
+addLanguage("<b>Hello</b>")
+to output hoga:
+<li><b>Hello</b></li>
+Hello bold dikhega.
+
+Lekin:
+
+addOptiLanguage("<b>Hello</b>")
+to output hoga:
+<li>&lt;b&gt;Hello&lt;/b&gt;</li>
+
+Screen par literally:
+<b>Hello</b>
+likha hua dikhega, bold nahi hoga.
+
+Ek line me yaad rakho:
+innerHTML → HTML ko samajhkar insert karta hai.
+createTextNode() → Sirf text insert karta hai, isliye zyada safe aur optimized mana jata hai. -->
+
+
+
+
+
+<!-- to .textContent aur method 2 optimized dono laghbhag same kaam krenge 
+
+Haan! 💯 Bilkul sahi samjhe.
+
+Difference kya hai?
+
+textContent
+Ek property hai.
+Seedha element ke text ko set kar deti hai.
+Code chhota aur readable hai.
+
+createTextNode()
+Pehle ek Text Node banata hai.
+Phir us Text Node ko appendChild() se add karta hai.
+Thoda zyada code likhna padta hai.
+LEKIN YE ZYADA OPTIMIZED APPROACH HOTA HAI... BADE PROJECT MEIN USE HOTA HAI...❌-->
+
+
+<!-- textContent aur createTextNode() dono HTML parse nahi karte,
+isliye dono safe aur efficient hain.
+
+Real-world projects mein simple text set karne ke liye
+textContent zyada common hai kyunki code chhota aur readable hota hai.
+
+createTextNode() tab useful hota hai jab explicitly
+Text Node create karke DOM me add karna ho. -->
