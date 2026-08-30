@@ -1,0 +1,40 @@
+
+=> 6 AB SAMJHATE HAI... DIFFERENCE BETWEEN .innerText AND .textContent
+
+<h1 id="title" class="heading"> DOM Learning on Chai aur Code</h1>
+
+ISME KUCH CHANGES KRNE PADENGE SAMJHANE KE LIYE... HTML VS CODE MEIN YHI SE CHANGE KRO
+
+ <h1 id="title" class="heading"> DOM Learning on Chai aur Code<span style="display:none";>test text</span></h1>
+
+
+
+AB
+=> 6.1 
+title.innerText  
+OUTPUT: 'DOM Learning on Chai aur Code'
+// KYO??
+// KYOKI YAHA HAMNE DISPLAY NONE USE KIYA HAI CSS PROPERTY... 
+JISKA MATLAB WO TEXT VISIBLE NHI HOGA WEBPAGE PE.... 
+title.innerText JO VISIBLE NHI HAI WO NHI DEGA
+
+=> 6.2
+title.textContent // YE SAB DEGA... POORA TEXT
+OUTPUT: ' DOM Learning on Chai aur Codetest text'
+textContent sirf text deta hai.
+HTML tags return nahi karta.
+Visible + hidden dono text return karta hai.
+
+
+// YE UPAR KE DONO TAG NHI DETE HAI
+
+=> 6.3
+title.innerHTML 
+ DOM Learning on Chai aur Code<span style="display:none" ;="">test text</span>
+OUTPUT: //YE BHI POORA DEGA... BUT...
+
+ MAIN TAG(h1 YAHA PE) MEIN JITNE BHI 
+ TEXT+SubTAGS JITNE BHI USE HAI+ UNME JO TEXT LIKHA HAI
+ + child attribute SAB DEGA
+ISLIYE SPAN TAG BHI OUTPUT MEIN AATA HAI.
+

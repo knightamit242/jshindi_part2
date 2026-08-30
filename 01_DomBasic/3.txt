@@ -1,0 +1,241 @@
+AB REAL WORLD MEIN USE HONE WAALE SELECTOR DEKHTE HAI...
+
+KUCH CHANGES KRENGE IS HTML FILE MEIN 
+
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+
+1=> document.querySelector
+
+=>1.1 
+document.querySelector('h1')
+OUTPUT:  <h1 id="title" class="heading"> DOM Learning on Chai aur Code<span style="display:none";>test text</span></h1>
+
+//POORA H1 DE DEGA
+
+=> 1.2 
+document.querySelector('h2')
+OUTPUT: <h2>Lorem ipsum dolor sit.</h2>
+// PEHLA WAALA POORA h2 DEGA BAS..
+
+// UPAR DONO MEIN HAMNE TAG SE POORE ELEMNT KO ACCESS KIYA/PAYA
+
+=> 2 // ID AUR CLASS SE POORA ELEMENT PANA 
+
+2.1=> id
+document.querySelector('#title')
+OUTPUT:  <h1 id="title" class="heading"> DOM Learning on Chai aur Code<span style="display:none";>test text</span></h1>
+
+### IN DONO CASE MEIN BHI POORA h1 MIL JAAYEGA... 
+
+=> 2.2 class
+document.querySelector('.heading')
+OUTPUT:  <h1 id="title" class="heading"> DOM Learning on Chai aur Code<span style="display:none";>test text</span></h1>
+
+
+
+// ANOTHER CHANGE IN HTML VS CODE FILE 
+         <input type="password" name="" id="">
+
+
+=>3 querySelector('')=> IS QUERY SELCTOR KA USE KRKE TUMNE JITNE BHI CSS PROPERTIES
+PADHE HAI UN SAB PE KAAM KRTA HAI...
+ TUM VALUE PASS KROGE YE POORA ELEMENT DE DEGA...
+
+ YAHA PAR HAMNE EK HTML TAG AUR USME KUCH CSS PROPERTIES DI HAI...
+          <input type="password" name="" id="">
+
+
+=> 3.1 
+document.querySelector('input[type="password"]')
+OUTPUT: <input type="password" name id>
+
+
+// AISE AUR BHI USE KR SKTE HO... LEKIN ABHI TUMHE CSS SELECTOR KI KNOWLEDGE HAI
+LEKIN BHOOL GYA HO😂
+
+
+// EK AUR CHANGE KRTE HAI...
+
+ <ul>
+            <li>ttt</li>
+            <li>dd</li>
+            <li>ddd</li>
+</ul>
+
+
+=> 4
+
+
+=> 4.1
+document.querySelector('ul')
+OUTPUT: 
+<ul>
+            <li>ttt</li>
+            <li>dd</li>
+            <li>ddd</li>
+</ul>
+
+=> 4.2 
+AB document.querySelector('ul') KISI VARIABLE MEIN STORE KR LETE HAI...
+
+const myul=document.querySelector('ul')
+
+AB myul PE BHI querySelector CHALA SKTE HO
+
+
+=> 4.3// 
+myul.querySelector('li')
+OUTPUT:  <li>ttt</li>
+// PEHLA li DE DEGA
+
+=> 4.4 AB TUM myul.querySelector('li') KO BHI KISI VARIABLE MEIN STORE KR SKTE HO
+const one=  myul.querySelector('li')
+
+
+=> 4.5
+one.style.backgroundColor='red'
+// backgroundColor red HO JAYEGA PEHLE li KA
+
+one.style.padding='30px'
+//padding 30px HO JAYEGA PEHLE li KA
+
+
+one.innerText
+OUTPUT: 'ttt'
+
+one.innerText='HELLO'
+OUTPUT: 'HELLO'
+
+### IS querySelector() SE SIRF PEHLA ELEMENT HE ACCESS HOGA... AUR STYLING YA MODIFICATION
+BHI SIRF US EK PE HE HO PAYEGA
+
+=>>> IS PROBLEM KO SOLVE KRTA HAI querySelectorAll() 
+
+
+=>5
+=>>> AB HAM querySelectorAll PADHTE HAI
+
+INTRO: YAHA JO BHI PASS KROGE LIKE KOI TAG PASS KIYA TOH...
+JITNE BHI TAG USE HUA HAI
+HTML document MEIN WO SAARE DE DEGA...
+EXAMPLE:
+document.querySelectorAll('li')
+OUTPUT: NodeList(3) [li, li, li]
+
+
+THODA PROFESSIONAL:JO SELECTOR PASS KAROGE, USSE MATCH KARNE WALE SAB ELEMENTS DEGA.
+Example:
+document.querySelectorAll('li')
+saare li dega.
+
+document.querySelectorAll('.heading')
+sirf class="heading" wale dega.
+
+=>>> REMEMBER: YE JO NodeList(3) [li, li, li] ... YE POORI TARAH SE ARRAY NHI HAI...
+
+KYOKI PURE ARRAY MEIN map() METHOD HOTA HAI... BUT YAHA
+NodeList(3) [li, li, li] MEIN JAB NICHE prototype MEIN DEKHOGE TO map() METHOD NHI HOGA...
+LEKIN ARRAY mein map() method HOTA HAI... CONSOLE PE CHECK KRKE DEKH LO
+
+NODELIST EK ARRAY-LIKE OBJECT HAI, LEKIN YEH ACTUAL ARRAY NAHI HAI.
+ISLIYE map(), filter(), reduce() directly AVAILABLE NHI HOTE
+
+// COMING TO THE TOPIC
+=> 5.1
+document.querySelectorAll('li')
+OUTPUT: NodeList(3) [li, li, li]
+
+=>5.11
+templist=document.querySelectorAll('li')
+
+templist
+OUTPUT: NodeList(3) [li, li, li]
+
+=> 5.12 
+templist.style.color='red'
+ERROR DEGA NHI CHALEGA... YE AISE KAAM NHI KRTA... REMEMBER
+
+
+=>5.13// AISE KAAM KREGA!!
+templist[0].style.color="green"  // AB green HO JAYEGA
+>> PEHLE li KA TEXT CONTENT GREEN HO JAYEGA
+
+
+
+=>6 >> DIFFERENCE BETWEEN querySelectorAll and querySelector
+
+document.querySelector('h1')
+<h1 id=​"title" class=​"heading">​…​</h1>​   
+YAHA POORA h1 DE RHA HAI...
+const one=document.querySelector('h1') AND AGAR
+one.style.backgroundColor='yellow'
+H1 KA backgroundColor yellow HO JAAYEGA
+
+
+
+querySelectorAll ARRAY(HA PURE ARRAY NHI HAI😂) RETURN KRTA HAI...
+AGAR h1 PE querySelectorAll KRTE HAI TOH...
+
+document.querySelectorAll('h1')  
+YE NodeList DETA HAI... EK ARRAY JAISA... TO AGAR TUM ISKO KISI two VARIABLE MEIN STORE KIYA
+
+two.style.backgroundColor='red'
+YE ERROR DEGA 
+
+two[0].style.backgroundColor='red'
+YE CHAL JAAYEGA...PEHLA H1 RED HO JAAYEGA
+
+
+
+
+
+=>> 7>> 
+
+=>7.1
+templist
+OUTPUT: NodeList(3) [li, li, li]
+
+=>7.2
+templist[0]
+<li style=​"color:​ green;​">​…​</li>​
+YAHA BAS PEHLA li ELEMENT DIYA HAI
+
+=>7.3
+YE ARRAY(HA😂.. IMPURE) forEach() KO SUPPORT KRTA HAI... PROTOTYPE MEIN DEKH LE
+
+templist.forEach((item)=>console.log(item))
+OUTPUT: <li style=​"color:​ green;​">​…​</li>​
+        <li>dd</li>
+        <li>ddd</li>
+
+ALL THREE li ELEMENTS DE DEGA
+
+IMP=>> YAHA ARROW FUNCTION USE KIYA HAI ...NORMAL FUNCTION BHI USE KR SKTE HO... DONO CHALEGA
+
+
+=> 7.4
+templist.forEach((item)=> item.style.backgroundColor="yellow")
+TINO li KA backgroundColor yellow HO JAYEGA
+
+
+IMP=>> ISKE UPAR forEach() USE KRNA... KYKOI map() USE HOGA NHI ISPE...
+SINCE REAL ARRAY NHI HAI.... HA.. NodeList KO ARRAY MEIN CONVERT KRKE... AISE...
+Array.from(templist).map(...)
+AB DO ANYTHING
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

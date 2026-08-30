@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black{
+           background-color: blueviolet; 
+        }
+    </style>
+</head>
+<body class="bg-black"> 
+    <div>
+        <h1 id="title" class="heading"> DOM Learning on Chai aur Code</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+</body>
+</html>
+
+
+<!-- One Line Exam/Interview Definition
+
+DOM (Document Object Model) is a tree-like representation of an HTML document that allows JavaScript to access and manipulate webpage elements dynamically. -->
+
+
+<!-- 1. DOM (Document Object Model) browser dwara HTML page ka ek tree structure representation hota hai.
+
+Browser HTML file ko read karke uska ek object tree banata hai jise JavaScript access aur manipulate kar sakti hai. -->
+
+<!-- 2. Window Object
+
+Browser ka sabse bada object.
+Sab kuch Window ke andar hota hai. -->
+
+<!-- 2.1  Browser environment mein Global Object = window hota hai.
+document, console, alert, location, history etc.
+window ke andar available hote hain. -->
+
+<!-- 3. window.alert("Hello")
+window.document
+window.console
+Usually window likhne ki zarurat nahi hoti. -->
+
+<!--YE SAB BROWSER KE CONSOLE MEIN HOGA -->
+
+<!--alert("Hello")
+console.log("Hello") -->
+
+<!-- 3.1 
+Ye internally:
+
+window.alert()
+window.console.log()
+hi hote hain. -->
+
+
+<!-- 3.2
+ console.log(window)  YE POORA WINDOW OBJECT DE DEGA
+
+ AUR console.log(window.document) ,
+   console.log(document) ,
+  AUR 
+  document
+   TINO SAME OUTPUT DENGE console MEIN
+ -->
+
+<!-- 4. Document Object
+
+HTML page ko represent karta hai.
+JavaScript HTML page ke saare elements ko document ke through access karti hai.
+
+Example:
+document.title
+Output:
+DOM Learning -->
+
+<!-- 
+5. DOM Tree
+Har HTML tag DOM mein ek node ban jata hai. 
+
+JAISE DIAGRAM MEIN HAR TAG DABBE MEIN HAI .. USSE HE NODE BOLTE HAIN
+-->
+
+<!-- 5.1 DOM ek tree structure hota hai.
+
+Parent Node
+Child Node
+Sibling Node
+
+ye terms bahut use hoti hain. -->
+
+  <!-- EXAMPLE -->
+<!-- <div>
+    <h1>Hello</h1>
+    <p>World</p>
+</div>
+
+div = parent
+h1 aur p = children
+h1 aur p = siblings -->
+
+
+<!-- 6
+Node Kya Hota Hai?
+DOM ka har part ek node hota hai.
+
+1. Element Node
+HTML tags
+
+<div></div>
+<h1></h1>
+<p></p>
+Ye sab element nodes hain.
+
+2. Text Node
+Tags ke andar ka text.
+<h1>DOM Learning</h1>
+
+Yahan:
+h1 → Element Node
+DOM Learning → Text Node
+
+3. Attribute Node
+Tag ke attributes.
+<div class="bg-black">
+
+Yahan:
+class="bg-black"
+attribute hai. -->
+
+
+<!-- 7
+JavaScript DOM Kyu Use Karti Hai?
+
+DOM ki help se JavaScript:
+
+HTML elements ko access kar sakti hai
+Content change kar sakti hai
+CSS change kar sakti hai
+Elements add/remove kar sakti hai
+Events handle kar sakti hai -->
+
+
+<!-- 
+console.log(document.baseURI)  US PAGE KA URL DE DEGA... jo bhi page mein inspect khole ho
+
+document.baseURI  YE BHI SAME HAI... AIS EBHI LIKH SKTE HO
+-->
+
+<!-- 
+document.links      JITNE BHI LINKS USE HUE HAI... SAB LINE SE DE DEGA-->   
+
+<!-- EXAMPLE:
+ document.querySelector("h1").innerText = "Hello Amit"
+ Output:
+<h1>Hello Amit</h1>
+ -->
+
+
+
+  <!-- DOM TREE
+
+  Document
+ └── html
+      ├── head
+      │    └── title
+      └── body
+           └── div
+                ├── h1
+                │    └── "DOM Learning on Chai aur Code"
+                └── p
+                     └── "Lorem ipsum dolor sit amet." -->

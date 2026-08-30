@@ -1,0 +1,125 @@
+=> YE SAB CODE.. BROWSER KE CONSOLE MEIN HOGA ABHI KE LIYE
+
+=>1
+=> SAMJHATE HAI getElementById => YE EK METHOD HAI document KO ACCESS KRNE KA
+
+=>1.1
+document.getElementById()
+NAAM SE HE CLEAR HAI KI 'element ko access krne using id used in that element'
+
+=>1.2
+document.getElementById('title')
+OUTPUT:  <h1 id="title" class="heading"> DOM Learning on Chai aur Code</h1>
+kyo?? 
+=>KYOKI YHI ELEMENT HAI JISME title NAAM KI id USE HUI HAI... TO POORA ELEMENT OUTPUT DEE DEGA
+
+
+=>1.3
+document.getElementById('title').id
+OUTPUT: 'title'               // AB YAHA POORE ME SE SIRF id CHAHIYE AGAR TO... .id KR DO
+
+
+=> 1.4
+document.getElementById('title').class
+OUTPUT: undefined                  //class AISE ACCESS NHI HOGA
+
+=> 1.5
+document.getElementById('title').className       // YAHA .className KRNA PADEGA     
+OUTPUT: 'heading'                     
+
+
+=> 1.6  // ATTRIBUTE ACCESS KRNE KA TARIKA // KEY PASS KROGE TO VALUE OUTPUT DEGA
+
+document.getElementById('title').getAttribute('id')     
+OUTPUT: 'title'
+//KEY YAHA id DIYA AUR VALUE title AA GAYA
+
+document.getElementById('title').getAttribute('class')
+OUTPUT: 'heading'
+// SAME YE BHI WAISE HE
+
+
+=>>> IMPORTANT>> document.getElementById("title") => Return karta hai: HTMLElement Object
+Isliye:
+
+title.id
+title.className
+title.style
+title.textContent
+
+sab access kar pa rahe ho.
+
+
+
+=> 2 DOING CHANGES/SOME MODIFICATION
+AB HAM APNE CLASS KO EDIT BHI KR SKTE HAI
+<h1 id="title" class="heading"> DOM Learning on Chai aur Code</h1>
+AGAR YAHA class="heading" HAI TO... HAM ISKO BADAL BHI SKTE HAI 
+
+=>2.1 // USING .setAttribute
+document.getElementById('title').setAttribute('class','changed')
+OUTPUT: undefined   //undefined DEGA LEKIN VALUE html mein CHANGE HO JAYEGI..
+
+<h1 id="title" class="changed"> DOM Learning on Chai aur Code</h1> 
+
+IMPORTANT POINT=>setAttribute()... purani value ko overwrite kar deta hai.
+
+
+=> 2.11 // EK HE SAATH DO class BHI DE SKTE HAI
+document.getElementById('title').setAttribute('class', 'pehla doosrabhi')
+OUTPUT: undefined   // DEGA LEKIN VALUE CHANGE HO JAYEGI 
+
+<h1 id="title" class="pehla doosrabhi"> DOM Learning on Chai aur Code</h1>
+// YEH CHANGES DOCUMENT MEIN HO JAAYENGE
+
+document.getElementById('title').setAttribute('class','test heading')
+<h1 id="title" class="test heading"> DOM Learning on Chai aur Code</h1>
+
+
+=> 3 
+document.getElementById('title') KO EK variable const MEIN STORE KRKE AAGE BADHNA
+LIKNHA KAM PADE
+
+=>3.1
+const title= document.getElementById('title')
+console.log(title)
+OUTPUT: <h1 id="title" class="test heading"> DOM Learning on Chai aur Code</h1>
+
+
+
+=> 4 AGAIN DOING CHANGES/SOME MODIFICATION
+
+=>4.1
+title.style.backgroundColor='red'
+<h1 id="title" class="test heading" style="background-color: red;"> DOM Learning on Chai aur Code</h1>
+//YAHA backgroundColor RED HO JAAYEGA
+
+
+title.style.borderRadius='20px'
+<h1 id="title" class="test heading" style="background-color: red;border-radius: 20px;">
+DOM Learning on Chai aur Code </h1>
+//borderRadius 20PX HO JAAYEGA
+
+
+
+
+=> 5
+<h1 id="title" class="test heading" style="background-color: red;border-radius: 20px;">
+DOM Learning on Chai aur Code </h1>
+
+=> 5.1
+title.textContent
+OUTPUT: ' DOM Learning on Chai aur Code'
+
+=> 5.2
+title.innerHTML   // ISKA BHI OUTPUT SAM HE AAYEGA // .innerText BHI SAME OUTPUT DEGA
+OUTPUT: ' DOM Learning on Chai aur Code'
+
+
+
+
+
+REMEMBER... ID KA title HONA AUR POORE H1 KO CONSOLE PE const title MEIN STORE KRNA IS 
+COINCEDENCE ONLY... KOI LENA DENA NHI HAI
+
+

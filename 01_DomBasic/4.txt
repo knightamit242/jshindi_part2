@@ -1,0 +1,53 @@
+//RECENT CHANGES
+
+            <li class="listItem">ttt</li>
+            <li class="listItem">dd</li>
+            <li class="listItem">ddd</li>
+            <li class="listItem">yyy</li>
+
+>>>>>>>>>>>>>>>>>>>AB PADHTE HAI.....  .getElementByClassName......................
+
+=>1 
+document.getElementByClassName('listItem')
+OUTPUT: HTMLCollection(4) [li.listItem, li.listItem, li.listItem, li.listItem]
+>>YAHA HAME HTML COLLECTION MILA HAI...
+AND ISKA JAB PROTOTYPE OPEN KROGE TO... USME KOI LOOP NHI DIKHEGA... forEach() BHI NHI
+
+
+=>1.1
+CHLO EXAMPLE DEKH LO...
+
+const one=document.getElementByClassName('listItem')
+
+one.forEach((item)=>console.log(item))
+OUTPUT: ERROR DEGA
+
+
+=> 1.2
+TO AB HTML COLLECTION([li.listItem, li.listItem, li.listItem, li.listItem]) KO ARRAY MEIN CONVERT KRNA PADEGA... PHIR KOI BHI LOOP LAGA SKTE HO         
+
+
+=> 1.22   // CONVERTING
+Array.from(one)     // YE HO GYA ARRAY MEIN CONVERT
+OUTPUT: (4) [li.listItem, li.listItem, li.listItem, li.listItem]
+
+
+=> 1.23 // STORE IT
+const convertedArray=Array.from(one)
+
+=> 1.24// USING forEach NOW
+convertedArray.forEach((item)=> item.style.color='red')
+ALL FOUR LIST CONTENT WILL TURN INTO RED.
+
+
+
+=> 2// JAVASCRIPT WIKIPEDIA WEBSITE PE YE SAB KIYA
+
+one=document.querySelectorAll('h3')
+
+one.forEach((item)=>{
+    item.style.color='red'
+    item.style.backgroundColor='green'
+    item.style.fontSize='40px'
+    item.innerText='hello'
+})
